@@ -55,6 +55,8 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
 
     private var bgAlpha = 1.0f
 
+    private var screenshotMode = false
+
     private val render: () -> Unit = {
         val g = canvas.bufferStrat.drawGraphics as Graphics2D
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
@@ -76,9 +78,11 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
         entityList.forEach { it.render(g, canvas.width, canvas.height) }
 
         // Draw fps
-        g.font = Font("Sans", Font.BOLD, 20)
-        g.color = ColorManager.COLOR_PALETTE.GREEN_600
-        g.drawString("%.1f FPS".format(loopManager.fps), 10, 20)
+        if (!screenshotMode) {
+            g.font = Font("Sans", Font.BOLD, 20)
+            g.color = ColorManager.COLOR_PALETTE.GREEN_600
+            g.drawString("%.1f FPS".format(loopManager.fps), 10, 20)
+        }
 
         // Draw mouse coords
         val mouseToFieldCoords = FieldUtil.screenCoordsToFieldCoords(
@@ -453,6 +457,10 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
         bgAlpha = alpha
 
         return this
+    }
+
+    fun setScreenshotModeEnabled(screenshotModeEnable: Boolean) {
+        screenshotMode = screenshotModeEnable
     }
 
     enum class Background {
