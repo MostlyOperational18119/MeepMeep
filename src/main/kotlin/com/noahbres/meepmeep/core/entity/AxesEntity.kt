@@ -69,6 +69,10 @@ class AxesEntity
         animationController.update()
     }
 
+    override fun shouldHideInScreenshotMode(): Boolean {
+        return true
+    }
+
     init {
         redrawAxes()
     }

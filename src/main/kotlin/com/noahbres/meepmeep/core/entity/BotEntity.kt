@@ -63,6 +63,9 @@ open class BotEntity(
         gfx.drawImage(baseBufferedImage, transform, null)
     }
 
+    override fun shouldHideInScreenshotMode(): Boolean {
+        return false
+    }
     private fun redrawBot() {
         val environment = GraphicsEnvironment.getLocalGraphicsEnvironment()
         val device = environment.defaultScreenDevice

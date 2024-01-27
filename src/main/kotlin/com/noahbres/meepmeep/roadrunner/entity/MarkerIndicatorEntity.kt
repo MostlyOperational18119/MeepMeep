@@ -108,4 +108,8 @@ class MarkerIndicatorEntity(
     override fun switchScheme(scheme: ColorScheme) {
         this.colorScheme = scheme
     }
+
+    override fun shouldHideInScreenshotMode(): Boolean {
+        return false
+    }
 }

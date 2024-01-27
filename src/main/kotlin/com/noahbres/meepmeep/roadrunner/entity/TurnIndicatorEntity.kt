@@ -33,6 +33,10 @@ class TurnIndicatorEntity(
     private val TURN_ARROW_ANGLE = 30.0.toRadians()
     private val TURN_ARROW_ANGLE_ADJUSTMENT = (-12.5).toRadians()
 
+    override fun shouldHideInScreenshotMode(): Boolean {
+        return false
+    }
+
     override fun update(deltaTime: Long) {
     }
 

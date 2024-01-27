@@ -75,7 +75,9 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
             }
         }
 
-        entityList.forEach { it.render(g, canvas.width, canvas.height) }
+        entityList.forEach {
+            if (!(it is ThemedEntity && it.shouldHideInScreenshotMode())) it.render(g, canvas.width, canvas.height)
+        }
 
         // Draw fps
         if (!screenshotMode) {
@@ -96,12 +98,14 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
         g.color =
             if (colorManager.isDarkMode) ColorManager.COLOR_PALETTE.GRAY_100 else ColorManager.COLOR_PALETTE.GRAY_800
 
-        g.drawString(
-            "(%.1f, %.1f)".format(
-                mouseToFieldCoords.x,
-                mouseToFieldCoords.y,
-            ), 10, canvas.height - 8
-        )
+        if (!screenshotMode) {
+            g.drawString(
+                "(%.1f, %.1f)".format(
+                    mouseToFieldCoords.x,
+                    mouseToFieldCoords.y,
+                ), 10, canvas.height - 8
+            )
+        }
 
         g.dispose()
         canvas.bufferStrat.show()
@@ -459,8 +463,10 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
         return this
     }
 
-    fun setScreenshotModeEnabled(screenshotModeEnable: Boolean) {
+    fun setScreenshotModeEnabled(screenshotModeEnable: Boolean): MeepMeep {
         screenshotMode = screenshotModeEnable
+
+        return this
     }
 
     enum class Background {

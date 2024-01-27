@@ -51,6 +51,10 @@ class CompassEntity(
         redraw()
     }
 
+    override fun shouldHideInScreenshotMode(): Boolean {
+        return true
+    }
+
     private fun redraw() {
         val environment = GraphicsEnvironment.getLocalGraphicsEnvironment()
         val device = environment.defaultScreenDevice
