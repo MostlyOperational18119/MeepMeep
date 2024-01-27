@@ -64,7 +64,7 @@ open class BotEntity(
     }
 
     override fun shouldHideInScreenshotMode(): Boolean {
-        return false
+        return true
     }
     private fun redrawBot() {
         val environment = GraphicsEnvironment.getLocalGraphicsEnvironment()
