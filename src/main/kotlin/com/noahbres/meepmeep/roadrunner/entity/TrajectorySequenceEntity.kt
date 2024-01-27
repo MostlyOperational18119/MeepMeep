@@ -54,6 +54,10 @@ class TrajectorySequenceEntity(
         redrawPath()
     }
 
+    override fun shouldHideInScreenshotMode(): Boolean {
+        return false
+    }
+
     private fun redrawPath() {
         // Request to clear previous turn indicator entities
         turnEntityList.forEach {

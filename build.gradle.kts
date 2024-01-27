@@ -5,7 +5,7 @@ plugins {
     java
     `java-library`
     `maven-publish`
-    kotlin("jvm") version "1.6.20-RC"
+    kotlin("jvm")// version "1.6.20-RC"
 }
 
 val meepMeepVersion = "1.0-SNAPSHOT"
