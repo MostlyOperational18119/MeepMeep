@@ -3,9 +3,13 @@ package com.noahbres.meepmeep.core.entity
 import com.acmerobotics.roadrunner.geometry.Pose2d
 import com.acmerobotics.roadrunner.geometry.Vector2d
 import com.noahbres.meepmeep.MeepMeep
-import com.noahbres.meepmeep.core.util.FieldUtil
 import com.noahbres.meepmeep.core.colorscheme.ColorScheme
-import java.awt.*
+import com.noahbres.meepmeep.core.util.FieldUtil
+import java.awt.Color
+import java.awt.Graphics2D
+import java.awt.GraphicsEnvironment
+import java.awt.RenderingHints
+import java.awt.Transparency
 import java.awt.geom.AffineTransform
 import java.awt.image.BufferedImage
 import kotlin.math.atan2

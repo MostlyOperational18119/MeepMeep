@@ -9,7 +9,7 @@ import com.noahbres.meepmeep.core.exhaustive
 import com.noahbres.meepmeep.roadrunner.Constraints
 import com.noahbres.meepmeep.roadrunner.DriveShim
 import com.noahbres.meepmeep.roadrunner.DriveTrainType
-import com.noahbres.meepmeep.roadrunner.trajectorysequence.*
+import com.noahbres.meepmeep.roadrunner.trajectorysequence.TrajectorySequence
 import com.noahbres.meepmeep.roadrunner.trajectorysequence.sequencesegment.SequenceSegment
 import com.noahbres.meepmeep.roadrunner.trajectorysequence.sequencesegment.TrajectorySegment
 import com.noahbres.meepmeep.roadrunner.trajectorysequence.sequencesegment.TurnSegment
