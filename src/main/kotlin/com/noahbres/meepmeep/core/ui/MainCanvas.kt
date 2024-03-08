@@ -1,6 +1,7 @@
 package com.noahbres.meepmeep.core.ui
 
-import java.awt.*
+import java.awt.Canvas
+import java.awt.Dimension
 import java.awt.image.BufferStrategy
 
 class MainCanvas(private var internalWidth: Int, private var internalHeight: Int): Canvas() {

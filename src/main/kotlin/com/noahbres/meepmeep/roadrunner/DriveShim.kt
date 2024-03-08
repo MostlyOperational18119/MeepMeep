@@ -1,7 +1,11 @@
 package com.noahbres.meepmeep.roadrunner
 
 import com.acmerobotics.roadrunner.geometry.Pose2d
-import com.acmerobotics.roadrunner.trajectory.constraints.*
+import com.acmerobotics.roadrunner.trajectory.constraints.AngularVelocityConstraint
+import com.acmerobotics.roadrunner.trajectory.constraints.MecanumVelocityConstraint
+import com.acmerobotics.roadrunner.trajectory.constraints.MinVelocityConstraint
+import com.acmerobotics.roadrunner.trajectory.constraints.ProfileAccelerationConstraint
+import com.acmerobotics.roadrunner.trajectory.constraints.TankVelocityConstraint
 import com.noahbres.meepmeep.roadrunner.trajectorysequence.TrajectorySequenceBuilder
 
 class DriveShim(driveTrainType: DriveTrainType, private val constraints: Constraints, var poseEstimate: Pose2d) {

@@ -2,9 +2,12 @@ package com.noahbres.meepmeep.roadrunner.entity
 
 import com.acmerobotics.roadrunner.geometry.Vector2d
 import com.noahbres.meepmeep.MeepMeep
-import com.noahbres.meepmeep.core.*
 import com.noahbres.meepmeep.core.colorscheme.ColorScheme
 import com.noahbres.meepmeep.core.entity.ThemedEntity
+import com.noahbres.meepmeep.core.scaleInToPixel
+import com.noahbres.meepmeep.core.toDegrees
+import com.noahbres.meepmeep.core.toRadians
+import com.noahbres.meepmeep.core.toScreenCoord
 import com.noahbres.meepmeep.core.util.FieldUtil
 import java.awt.BasicStroke
 import java.awt.Graphics2D
